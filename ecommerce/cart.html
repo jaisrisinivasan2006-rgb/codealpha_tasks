@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Your Cart</h2>
+  <div id="cart"></div>
+  <div class="total" id="total"></div>
+  <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+
+cart.forEach(i => {
+  total += i.price;
+  cart.innerHTML += `
+    <div class="cart-item">
+      <span>${i.name}</span>
+      <span>₹${i.price}</span>
+    </div>`;
+});
+
+totalDiv.innerText = "Total: ₹" + total;
+
+function placeOrder() {
+  alert("Order placed successfully!");
+  localStorage.removeItem("cart");
+}
+</script>
+
+</body>
+</html>
