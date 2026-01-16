@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Instagram</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">MiniInstagram</div>
+
+<!-- Profile -->
+<div class="card">
+  <input id="username" placeholder="Enter username">
+  <button onclick="login()">Login</button>
+  <p id="profileText"></p>
+  <button id="followBtn" onclick="toggleFollow()">Follow</button>
+</div>
+
+<!-- Create Post -->
+<div class="card">
+  <input type="file" id="imageInput" accept="image/*">
+  <input id="caption" placeholder="Write a caption">
+  <button onclick="addPost()">Share</button>
+</div>
+
+<!-- Feed -->
+<div id="feed"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
