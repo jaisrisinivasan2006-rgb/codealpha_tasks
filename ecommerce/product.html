@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="name"></h2>
+<p id="price"></p>
+<button onclick="addToCart()">Add to Cart</button>
+
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+  window.location = "login.html";
+}
+
+let p = JSON.parse(localStorage.getItem("selectedProduct"));
+name.innerText = p.name;
+price.innerText = "₹" + p.price;
+
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(p);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.location = "cart.html";
+}
+</script>
+
+</body>
+</html>
